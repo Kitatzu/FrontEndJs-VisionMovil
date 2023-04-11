@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Footer(){
     return(
-<AppBar>
+<AppBar position="fixed" color="primary" style={{ top: 'auto', bottom: 0 }}>
     <Container>
         <Toolbar>
         <Grid Container>
