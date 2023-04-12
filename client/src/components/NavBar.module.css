@@ -1,0 +1,23 @@
+.MenuBar ul li{
+list-style: none;	
+display: inline-block; 
+margin-left: 30px;
+}
+
+.Bar {
+top: 0;
+left: 0;
+right: 0;
+background-color: white;
+}
+
+.MenuOptions  {
+background-color: white;
+text-align: right;
+font-weight: bold;
+margin-right: 50px;
+}
+
+.MenuOptions a{
+text-decoration:none;
+}

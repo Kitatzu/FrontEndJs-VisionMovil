@@ -1,12 +1,14 @@
-import { AppBar, Container, Grid, Toolbar, Typography } from '@mui/material';
+import { AppBar, Container, Grid, Toolbar, Typography, Box, CssBaseline } from '@mui/material';
 import { AiFillLinkedin, AiOutlineFacebook,AiOutlineInstagram } from "react-icons/ai";
 import Link from 'next/link';
 
+
 export default function Footer(){
     return(
-<AppBar>
-    <Container>
-        <Toolbar>
+<Box bgcolor="black" color="white" py={5} position="static">
+<CssBaseline />
+    <Container maxWidth={false} disableGutters>
+        <Toolbar >
         <Grid Container>
 
         <Grid item>
@@ -34,6 +36,6 @@ export default function Footer(){
         </Grid>
         </Toolbar>
     </Container>
-</AppBar>
+</Box>
     )
 }
