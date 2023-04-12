@@ -1,0 +1,46 @@
+
+.back {
+    background-color: #D8D55D;
+    margin-top: 130px;
+    margin-bottom: 0px;
+    padding-top: 5px;
+    }
+.welcome{
+    width: 50%;
+    height: 20%;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin-left: 30%;
+}    
+.firstText{
+    width: 60%;
+    margin-left: 30%;
+}
+.ourValues{
+    width: 50%;
+}
+.valuesIcons{
+    font-size: 100px;
+}
+.values{
+        width: 50%;
+        height: 20%;
+        padding-top: 5px;
+        padding-bottom: 10px;
+        margin-left: 10%;
+}
+.valuesText{
+    margin-left: 10%;
+}
+.canRows{
+    width: 15%;
+    border: white solid 2px;
+    border-radius: 10%;
+    margin: 5px;
+}
+.canContainer{
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+}
+
