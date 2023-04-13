@@ -1,4 +1,4 @@
-import { Container, Grid, Toolbar, Typography, Select, MenuItem } from '@mui/material';
+import {  Grid, Typography, Select, MenuItem } from '@mui/material';
 import Image from 'next/image';
 import {IoIosPaper} from "react-icons/io"
 import {BsFillMegaphoneFill,BsLightbulbFill} from "react-icons/bs"
@@ -9,17 +9,22 @@ import styles from "./AboutContent.module.css"
 import welcome from "./images/about/welcome.png"
 import values from "./images/about/values.png"
 import can from "./images/about/can.png"
+import { useState } from 'react';
 
 
 export default function AboutContent(){
 
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  function handleBoxClick() {
+    setIsExpanded(!isExpanded);
+  }
 
     return(
   
 <div className={styles.back}>
-  <Toolbar >
+ 
     <Grid Container>
-
       <Grid item>
       <Image className={styles.welcome} src={welcome} alt="welcome"/>
 <br></br>
@@ -38,28 +43,51 @@ export default function AboutContent(){
         LA LEALTAD Y LA HONORABILIDAD EN EL TRATO ENTRE EL EQUIPO, LOS USUARIOS Y CLIENTES SON NUESTROS PRINCIPALES VALORES.
         </Typography>
 <br></br>
-      <Select defaultValue="innovacion">
-       <MenuItem value="innovacion" style={{ display: 'none' }}>Innovación</MenuItem>
-       <MenuItem value="texto inn">
-       Utilizamos un innovador recurso de publicidad, la mampara publicitaria; en un medio como el transporte de pasajeros y estrategias de bajo costo y alto impacto.
-       </MenuItem>
-      </Select>
-      
-      <Select defaultValue="educacion">
-       <MenuItem value="educacion" style={{ display: 'none' }}>Educación</MenuItem>
-       <MenuItem value="texto edu">
-       Ademas de un sin fin de herramientas que ponemos a tu alcance, compartimos información de valor respecto a la publicidad y el marketing.
-       </MenuItem>
-      </Select>
 
-      <Select defaultValue="consistencia">
-       <MenuItem value="consistencia" style={{ display: 'none' }}>Consistencia</MenuItem>
-       <MenuItem value="texto edu">
-       Creemos en la consistencia como parte fudamental del crecimiento en cualquier proyecto o inciativa que se tenga.
-       </MenuItem>
-      </Select>
-      <br></br>
-      <Image src={can} />
+
+
+
+     <div
+      className={`${styles.expandingBox} ${isExpanded ? styles.expanded : ''}`}
+      onClick={handleBoxClick}
+    >
+      <div className={styles.expandingBoxHeader}>Innovación</div>
+      <div className={styles.expandingBoxContent}>
+        <p>Utilizamos un innovador recurso de publicidad, la mampara publicitaria; en un medio como el transporte de pasajeros y estrategias de bajo costo y alto impacto.</p>
+      </div>
+    </div>
+    <br></br>
+
+
+    <div
+      className={`${styles.expandingBox} ${isExpanded ? styles.expanded : ''}`}
+      onClick={handleBoxClick}
+    >
+      <div className={styles.expandingBoxHeader}>Educación</div>
+      <div className={styles.expandingBoxContent}>
+        <p> Ademas de un sin fin de herramientas que ponemos a tu alcance, compartimos información de valor respecto a la publicidad y el marketing.</p>
+      </div>
+    </div>
+    <br></br>
+
+    <div
+      className={`${styles.expandingBox} ${isExpanded ? styles.expanded : ''}`}
+      onClick={handleBoxClick}
+    >
+      <div className={styles.expandingBoxHeader}>Consistencia</div>
+      <div className={styles.expandingBoxContent}>
+        <p> Creemos en la consistencia como parte fudamental del crecimiento en cualquier proyecto o inciativa que se tenga.</p>
+      </div>
+    </div>
+    <br></br>
+
+
+
+        </Grid>
+
+        </Grid>
+        
+        <Image src={can} />
       <Typography>
         AUMENTA EL TRAFICO DE TU MARCA
       </Typography>
@@ -68,7 +96,7 @@ export default function AboutContent(){
         <Grid item className={styles.canRows}>
         <div >
         <IoIosPaper className={styles.valuesIcons}/>
-        <Typography>
+        <Typography >
         DIRECTORIO COMERCIAL
         </Typography>
         <Typography>
@@ -126,12 +154,6 @@ export default function AboutContent(){
         </Grid>
 
       </Grid>
-
-        </Grid>
-
-        </Grid>
-        </Toolbar>
-       
     </div>
 
     )

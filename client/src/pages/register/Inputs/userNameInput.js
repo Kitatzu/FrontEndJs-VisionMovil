@@ -1,43 +1,54 @@
-import {
-    InputLabel,
-    OutlinedInput,
-    InputAdornment,
-    IconButton,
-    FormControl,
-  } from "@mui/material";
-  import { Icon } from "@iconify/react";
+import React, { useState } from 'react';
+import { TextField, Button } from '@mui/material';
 
-  const UserName = ({ handleChange, handleBlur, form, error }) => {
-  
-    return(
-     <FormControl variant="outlined">
+function valUserName(data){
+let error="";
+if(data.length===0){
+  error="escriba un username"
+}else{
+  error="";
+}
+return error;
+}
 
-      <InputLabel htmlFor="user name" >
-        Nombre:
-      </InputLabel>
+function UserName() {
+  const [UN, setUN] = useState("");
+  const [error,setError]=useState("sin data");
 
-      <OutlinedInput
-        id="user name"
-        name="user name"
-        type="text"
-        onChange={handleChange}
-        onBlur={handleBlur}
-        value={form.UserName}
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const err = valUserName(UN);
+    setError(err);
+    if(error===""){
+    console.log(error);
+    alert("input andando")
+    }else{
+      alert("hay error al ingresar data")
+    }
+  };
+
+  const handleChange = (event) => {
+    setUN(event.target.value);
+    const aux=valUserName(event.target.value);
+    setError(aux);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <TextField
+        id="userName"
+        label="ingrese usuario..."
         required
-        error={error}
-        endAdornment={
-          <InputAdornment position="end">
-            <IconButton edge="end">
-              <Icon
-                icon="mdi:account-badge"
-              />
-            </IconButton>
-          </InputAdornment>
-        }
-        label="user name"
+        value={UN}
+        onChange={handleChange}
       />
-        </FormControl>
-    )
+      <p>el error:{error}</p>
+      <p>el UN:{UN}</p>
+      <Button type="submit">
+        Enviar
+      </Button>
+    </form>
+  );
 }
 
 export default UserName;
