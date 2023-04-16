@@ -2,7 +2,7 @@ import countries from "./data/countries";
 import { Select,MenuItem } from "@mui/material";
 import { useState } from "react";
 
-const CountryInput=()=>{
+const Phone=()=>{
   const [current, setCurrent] = useState('');
 
   const handleChange = (event) => {
@@ -11,13 +11,13 @@ const CountryInput=()=>{
 
   return(
 <Select onChange={handleChange} value="value">
-  <MenuItem value="value" disabled>Seleccione un país</MenuItem>
+  <MenuItem value="value" disabled>Código de area</MenuItem>
   {countries.map((e)=>(
-    <MenuItem key={e.code} >{e.label}</MenuItem>
+    <MenuItem key={e.code} >{e.code} {e.phone}</MenuItem>
   ))}
   <MenuItem></MenuItem>
 </Select>
   )
 }
 
-export default CountryInput;
+export default Phone;
