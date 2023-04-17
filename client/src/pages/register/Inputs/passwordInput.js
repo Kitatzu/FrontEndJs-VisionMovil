@@ -1,62 +1,55 @@
-import {
-    InputLabel,
-    OutlinedInput,
-    InputAdornment,
-    IconButton,
-    FormControl,
-  } from "@mui/material";
-  import { Icon } from "@iconify/react";
-  import { React, useState } from "react";
- 
-  const PasswordRegisterInput = ({ handleChange, handleBlur, form, error }) => {
-    const [showPassword, setShowPassword] = useState(false);
-  
-    const handleClickShowPassword = () => setShowPassword((show) => !show);
-  
-    const handleMouseDownPassword = (event) => {
-      event.preventDefault();
-    };
+import React, { useState } from 'react';
+import { TextField, Button } from '@mui/material';
 
-    return (
-      <FormControl variant="outlined"
-      >
-        <InputLabel
-          htmlFor="password"
-        >
-          Password
-        </InputLabel>
+function valPassword(data){
+let error="";
+if(data.length===0){
+  error="escriba una contraseña"
+}else{
+  error="";
+}
+return error;
+}
 
-        <OutlinedInput
-          id="password"
-          name="password"
-          type={showPassword ? "text" : "password"}
-          onChange={handleChange}
-          onBlur={handleBlur}
-          value={form.password}
-          error={error}
-          endAdornment={
-            <InputAdornment position="end">
-              <IconButton
-                aria-label="toggle password visibility"
-                onClick={handleClickShowPassword}
-                onMouseDown={handleMouseDownPassword}
-                edge="end"
-              >
-                {showPassword ? (
-                  <Icon
-                    icon="material-symbols:visibility-off"
-                  />
-                ) : (
-                  <Icon
-                    icon="material-symbols:visibility"
-                  />
-                )}
-              </IconButton>
-            </InputAdornment>
-          }
-          label="password"
-        />
-      </FormControl>
-    );
+function Password() {
+  const [pass, setPass] = useState("");
+  const [error,setError]=useState("sin data");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const err = valPassword(pass);
+    setError(err);
+    if(error===""){
+    console.log(error);
+    alert("input andando")
+    }else{
+      alert("hay error al ingresar data")
+    }
   };
-  export default PasswordRegisterInput;
+
+  const handleChange = (event) => {
+    setPass(event.target.value);
+    const aux=valPassword(event.target.value);
+    setError(aux);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <TextField
+        id="password"
+        label="ingrese una contraseña..."
+        required
+        value={pass}
+        type='password'
+        onChange={handleChange}
+      />
+      <p>el error:{error}</p>
+      <p>el pass:{pass}</p>
+      <Button type="submit">
+        Enviar
+      </Button>
+    </form>
+  );
+}
+
+export default Password;
