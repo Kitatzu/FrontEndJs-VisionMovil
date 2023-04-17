@@ -1,43 +1,54 @@
-import {
-    InputLabel,
-    OutlinedInput,
-    FormControl,
-    InputAdornment,
-    IconButton,
-  } from "@mui/material";
-  import { Icon } from "@iconify/react";
+import React, { useState } from 'react';
+import { TextField, Button } from '@mui/material';
 
- 
-  const LastNameInput = ({ handleChange, handleBlur, form, error }) => {
-    
-    return (
-     <FormControl variant="outlined">
+function valUserName(data){
+let error="";
+if(data.length===0){
+  error="escriba un apellido"
+}else{
+  error="";
+}
+return error;
+}
 
-      <InputLabel htmlFor="last name">
-          Apellido:
-      </InputLabel>
+function LastName() {
+  const [lastName, setLastName] = useState("");
+  const [error,setError]=useState("sin data");
 
-      <OutlinedInput
-          id="last name"
-          name="lastname"
-          type="text"
-          onChange={handleChange}
-          onBlur={handleBlur}
-          value={form.lastname}
-          required
-          error={error}
-          endAdornment={
-            <InputAdornment position="end">
-              <IconButton edge="end">
-                <Icon
-                  icon="icon-park-outline:edit-name"
-                />
-              </IconButton>
-            </InputAdornment>
-          }
-          label="lastName"
-        />
-      </FormControl>
-    );
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const err = valUserName(lastName);
+    setError(err);
+    if(error===""){
+    console.log(error);
+    alert("input andando")
+    }else{
+      alert("hay error al ingresar data")
+    }
   };
-  export default LastNameInput;
+
+  const handleChange = (event) => {
+    setLastName(event.target.value);
+    const aux=valUserName(event.target.value);
+    setError(aux);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <TextField
+        id="lastName"
+        label="ingrese su apellido..."
+        required
+        value={lastName}
+        onChange={handleChange}
+      />
+      <p>el error:{error}</p>
+      <p>el lastName:{lastName}</p>
+      <Button type="submit">
+        Enviar
+      </Button>
+    </form>
+  );
+}
+
+export default LastName;
