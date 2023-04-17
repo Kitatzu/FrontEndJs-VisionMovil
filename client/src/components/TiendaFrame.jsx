@@ -8,13 +8,13 @@ import Stack from '@mui/material/Stack';
 
 
 
-
 import ProductCard from "@/components/ProductCard";
 
 
 export default function TiendaFrame() {
   return (
 <div>
+
 
 <ProductCard /> 
 <br></br>

@@ -9,9 +9,10 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 // ----------------------------------
 
+import ProductProfile from "@/components/ProductProfile";
 
 // ------ NEXT imports -----------------
-import Image from 'next/image'
+import Image from 'next/image';
 // -------------------------------------
 
 // ------  graphic assets ------------------
@@ -26,17 +27,38 @@ import dummyProd from './dummyProd.jpg'
 
 
 export default function ProductCard(){
+
+// -------- Handlers ----------------
+
+function handleClickProfile(e){
+// go to  producto profile
+// pass product id via props 
+// e.id = product id  
+	
+
+
+}
+
+
+
+
+// ------ End Handlers ---------------
+
+
 return (
+
+
 <div>
 
 <Grid container spacing={2}> 
               <Grid item xs={12}>
 
 	{/*Elements for render product cards */}
-<Card sx={{ maxWidth: 340 }}>
-	<CardContent>
+<Card sx={{ maxWidth: 340 }} >
+
+	<CardContent onClick={(e) => handleClickProfile(e) }>
 	<Typography sx={{ mb: 1.5 }} color="text.secondary">
-	<Image src={ dummyProd } alt="Producto"  width={ 300 } height={ 300 } />
+	<Image src={ dummyProd } alt="Producto"  width={ 300 } height={ 300 }/>
 	</Typography>
 	<Typography variant="body1">
 	Descripcion del producto  
@@ -51,7 +73,7 @@ return (
 	<Button size="small">Agregar al Carrito </Button>
 	</CardActions>
 </Card>
-	</Grid>
+</Grid>
 
  <Grid item xs={12}>
 
