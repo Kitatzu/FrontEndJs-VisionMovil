@@ -116,3 +116,26 @@ export const updateProduct =() => {
           });
     }
 }
+
+  export const getByPage = (numPage) => {
+    return async (dispatch) => {
+      try {
+        dispatch(setLoadingProducts(true));
+        axios
+          .get(`${Global.URL}/products/page/${numPage}`)
+          .then((response) => {
+            dispatch(setProducts(response.data));
+            dispatch(setLoadingProducts(false));
+          })
+          .catch((e) => {
+            console.log(e);
+            dispatch(setLoadingProducts(false));
+          });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  };
+
+
+

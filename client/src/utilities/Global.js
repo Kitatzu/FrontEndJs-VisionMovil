@@ -1,5 +1,5 @@
 const Global={
-    URL:"http://localhost:3001",
+    URL:"https://vision-movil.onrender.com/",
 }
 
 export default Global
