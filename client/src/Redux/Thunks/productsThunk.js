@@ -1,68 +1,66 @@
-import { 
-    setProducts,
-    setLoadingProducts,
-    setDeletedProducts,
-    setProductID,
-    setCreateProduct
- } from "../Slices/productsSlice";
+import axios from "axios";
+import Swal from "sweetalert2";
 import Global from "@/utilities/Global";
+import {
+  setCreateProduct,
+  setIsLoadingProducts,
+  setProducts,
+  setProductId,
+  setPages,
+  setPopularProducts,
+  setDeletedProduct,
+} from "../Slices/productsSlice";
 
 export const getProducts = () => {
-    return async (dispatch) => {
-      dispatch(setLoadingProducts(true));
-      await axios
-        .get(`${Global.URL}/products`)
-        .then((response) => {
-          console.log(response);
-          dispatch(setProducts(response.data));
-          dispatch(setLoadingProducts(false));
-        })
-        .catch((response) => {
-          console.log(response);
-          alert(response.response.data.msg);
-        });
-    };
-  };
-
-  export const deletedProducts = () => {
-    return async (dispatch) => {
-      dispatch(setLoadingProducts(true));
-      await axios
-        .get(`${Global.URL}/products/status`)
-        .then((response) => {
-          dispatch(setDeletedProducts(response.data));
-          dispatch(setLoadingProducts(false));
-        })
-        .catch((response) => {
-          dispatch(setLoadingProducts(false));
-          console.log(response);
-        });
-    };
-  };
-  
-  export const getProductByID = (id) => {
-    return async (dispatch) => {
-      try {
-        dispatch(setLoadingProducts(true));
-        axios
-          .get(`${Global.URL}/products/${id}`)
-          .then((response) => {
-            dispatch(setProductID(response.data));
-            dispatch(setLoadingProducts(false));
-          })
-          .catch((e) => {
-            console.log(e);
-            dispatch(setLoadingProducts(false));
-          });
-      } catch (error) {
-        console.log(error);
-      }
-    };
-  };
-
-  export const createProduct = (form) => {
   return async (dispatch) => {
-    dispatch(setLoadingProducts(true));
+    dispatch(setIsLoadingProducts(true));
+    await axios
+      .get(`${Global.URL}/products`)
+      .then((response) => {
+        dispatch(setProducts(response.data));
+        dispatch(setIsLoadingProducts(false));
+      })
+      .catch((response) => {});
+  };
+};
+
+export const getProductsByName = (name) => {
+  return async (dispatch) => {
+    dispatch(setIsLoadingProducts(true));
+    await axios
+      .get(`${Global.URL}/search/${name}`)
+      .then((response) => {
+        console.log(response);
+        dispatch(setProducts(response.data));
+        dispatch(setIsLoadingProducts(false));
+      })
+      .catch((response) => {});
+  };
+};
+
+export const getProductsById = (id) => {
+  return async (dispatch) => {
+    try {
+      dispatch(setIsLoadingProducts(true));
+      axios
+        .get(`${Global.URL}/products/${id}`)
+        .then((response) => {
+          dispatch(setProductId(response.data));
+          dispatch(setIsLoadingProducts(false));
+        })
+        .catch((e) => {
+          console.log(e);
+          dispatch(setIsLoadingProducts(false));
+        });
+    } catch (error) {
+      return error;
+    }
+  };
+};
+
+export const createProduct = () => {
+  return async (dispatch) => {
+    dispatch(setIsLoadingProducts(true));
     return await axios({
       url: `${Global.URL}/products`,
       method: "POST",
@@ -73,69 +71,74 @@ export const getProducts = () => {
       data: form,
     })
       .then((response) => {
-        console.log(response);
         dispatch(getProducts());
-        dispatch(setLoadingProducts(false));
+        dispatch(setIsLoadingProducts(false));
         dispatch(setCreateProduct(response.data.newProduct.id));
       })
       .catch((response) => {
-        console.log(response);
-        dispatch(setLoadingProducts(false));
+        dispatch(setIsLoadingProducts(false));
+        Swal.fire({
+          icon: "error",
+        });
       });
   };
 };
 
-export const restoreProduct =()=>{
-return async (dispatch) =>{
-    dispatch(setLoadingProducts(true));
-    return await axios.put(`${Global.URL}/products/restore/${id}`)
-    .then((response) => {
-        console.log(response);
-        dispatch(setProducts(response.data));
-        dispatch(setLoadingProducts(false));
+export const getPages = (page) => {
+  if (parseInt(page) === 0) {
+    return async (dispatch) => {
+      await axios
+        .get(`${Global.URL}/products/page/${page}`)
+        .then((response) => {
+          dispatch(setPages(response.data.pages));
+        })
+        .catch((response) => {
+          Toast.fire({ icon: "error" });
+        });
+    };
+  } else {
+    return async (dispatch) => {
+      await axios
+        .get(`${Global.URL}/products/page/${page}`)
+        .then((response) => {
+          dispatch(setProducts(response.data));
+        })
+        .catch((response) => {
+          console.log(response);
+          Toast.fire({ icon: "error" });
+        });
+    };
+  }
+};
+
+export const getProductsByCategories = (name) => {
+  return async (dispatch) => {
+    dispatch(setIsLoadingProducts(true));
+    await axios
+      .get(`${Global.URL}/categories/${name}`)
+      .then((response) => {
+        dispatch(setProducts(response.data.filter));
+        dispatch(setIsLoadingProducts(false));
       })
       .catch((response) => {
-        console.log(response);
-        alert(response.response.data.msg);
+        // alert(response.response.data.msg);
+        dispatch(setIsLoadingProducts(false));
       });
-}
-}
-
-export const updateProduct =() => {
-    return async (dispatch) =>{
-        dispatch(setLoadingProducts(true));
-        return await axios.put(`${Global.URL}/products/${id}`)
-        .then((response) => {
-            console.log(response);
-            dispatch(setProducts(response.data));
-            dispatch(setLoadingProducts(false));
-          })
-          .catch((response) => {
-            console.log(response);
-            alert(response.response.data.msg);
-          });
-    }
-}
-
-  export const getByPage = (numPage) => {
-    return async (dispatch) => {
-      try {
-        dispatch(setLoadingProducts(true));
-        axios
-          .get(`${Global.URL}/products/page/${numPage}`)
-          .then((response) => {
-            dispatch(setProducts(response.data));
-            dispatch(setLoadingProducts(false));
-          })
-          .catch((e) => {
-            console.log(e);
-            dispatch(setLoadingProducts(false));
-          });
-      } catch (error) {
-        console.log(error);
-      }
-    };
   };
+};
 
-
-
+export const getPopularProducts = () => {
+  return async (dispatch) => {
+    axios
+      .get(`${Global.URL}/products/popular`)
+      .then((response) => {
+        dispatch(setPopularProducts(response.data));
+      })
+      .catch((e) => {
+        Swal.fire({
+          icon: "warning",
+          title: "Advertencia! no existen productos populares.",
+        });
+      });
+  };
+};

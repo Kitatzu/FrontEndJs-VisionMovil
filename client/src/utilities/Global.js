@@ -1,5 +1,5 @@
-const Global={
-    URL:"https://vision-movil.onrender.com/",
-}
+const Global = {
+  URL: "https://vision-movil.onrender.com",
+};
 
-export default Global
+export default Global;
