@@ -4,7 +4,7 @@
 import React from 'react';
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getByPage } from '../Redux/Thunks/productsThunk.js'
+import { getPages } from '../Redux/Thunks/productsThunk.js'
 
 
 // ----- Material UI imports ----
@@ -18,10 +18,12 @@ import ProductCard from "@/components/ProductCard";
 
 export default function TiendaFrame() {
 
-	//const Productos = useSelector((state) => state.products);
+const Productos = useSelector((state) => state.products);
+	console.log(Productos);
 
-	function currentPage(num){
-		dispatch(geyByPage(num));
+//const {products, isLoading} = useSelector((state) => state.products)
+	function currentPage(page){
+//		dispatch(getPages(page));
 		console.log("mostrando info ");
 	}
 
@@ -33,7 +35,7 @@ export default function TiendaFrame() {
 <ProductCard /> 
 <br></br>
  <Stack spacing={2}>
-      <Pagination count={10} color="secondary" onClick={console.log("CLICKED")}/>
+      <Pagination count={10} color="secondary"/>
 </Stack>
 <br></br>
 
