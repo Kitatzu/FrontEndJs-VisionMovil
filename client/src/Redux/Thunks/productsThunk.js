@@ -9,6 +9,7 @@ import {
   setPages,
   setPopularProducts,
   setDeletedProduct,
+  getTotalPages,
 } from "../Slices/productsSlice";
 
 export const getProducts = () => {
@@ -142,3 +143,18 @@ export const getPopularProducts = () => {
       });
   };
 };
+
+export const getNumberPages = () => {
+  return async (dispatch) => {
+     await axios
+      .get(`${Global.URL}/products/page/0`)
+      .then((response) => {
+         dispatch(getTotalPages(response.data.pages));
+	 dispatch(setIsLoadingProducts(false));
+
+           })
+      .catch((response) => {});
+  };
+};
+
+

@@ -4,7 +4,7 @@
 import React from 'react';
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getPages, getProducts } from '../Redux/Thunks/productsThunk.js'
+import { getPages, getProducts, getNumberPages } from '../Redux/Thunks/productsThunk.js'
 
 
 // ----- Material UI imports ----
@@ -16,19 +16,19 @@ import ProductCard from "@/components/ProductCard";
 
 
 export default function TiendaFrame() {
-	const dispatch =useDispatch();
+	const dispatch = useDispatch();
 
 	const Productos = useSelector((state) => state.products);
+	const Paginas = useSelector((state) => state.products.totalPaginas);
 
 // iniciamos en pagina 1 /pagina 0 nos muestra status # de paginas
 useEffect(() => {
 	dispatch(getProducts())
-	dispatch(getPages(1)); 
+	dispatch(getPages(1));
+	dispatch(getNumberPages());
 }, [dispatch])  	
 
 
-
-// console.log(Object.keys(Productos.products));
 function currentPage(page){
 //		dispatch(getPages(page));
 //		console.log("mostrando info ");
@@ -37,8 +37,8 @@ function currentPage(page){
 
 	return (
 <div>
-	
-		{Object.keys(Productos.products).map((idx) => {
+		{/*			
+	{Object.keys(Productos.products).map((idx) => {
 return (
 <ProductCard
 	key={idx}
@@ -51,13 +51,13 @@ return (
 )
 
 		})}
-
+*/}
 <br></br>
 
 
 
   <Stack spacing={2}>
-      <Pagination count={10} color="secondary"/>
+      <Pagination count={ Paginas } color="secondary"/>
 </Stack>
 <br></br>
 

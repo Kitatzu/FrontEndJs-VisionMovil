@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   products: null,
+  totalPaginas: 0,
   productsDetail: null,
   tempProducts: null,
   productCreate: {
@@ -46,6 +47,7 @@ export const productsSlice = createSlice({
     filterPrice: (state, action) => {
       state.filters.prices[action.payload.name] = action.payload.value;
     },
+	     
     filterProduct: (state) => {
       if (parseInt(state.filters.prices.min) > 0)
         state.tempProducts = state.products.filter(
@@ -74,7 +76,14 @@ export const productsSlice = createSlice({
       )
         state.tempProducts = state.products;
     },
+ 	getTotalPages: (state, action) => {
+  	 state.totalPaginas = action.payload;
+  	  },	 
   },
+
+
+
+  
 });
 
 export const {
@@ -87,4 +96,5 @@ export const {
   setDeletedProduct,
   filterPrice,
   filterProduct,
+  getTotalPages,
 } = productsSlice.actions;

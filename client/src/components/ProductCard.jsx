@@ -35,7 +35,7 @@ function handleClickProfile(e){
 // pass product id via props 
 // e.id = product id  
 	
-console.log(description)
+// console.log(description)
 }
 
 
