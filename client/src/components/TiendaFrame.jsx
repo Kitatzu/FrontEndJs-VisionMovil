@@ -37,7 +37,7 @@ function currentPage(page){
 
 	return (
 <div>
-		{/*			
+					
 	{Object.keys(Productos.products).map((idx) => {
 return (
 <ProductCard
@@ -51,7 +51,7 @@ return (
 )
 
 		})}
-*/}
+
 <br></br>
 
 
