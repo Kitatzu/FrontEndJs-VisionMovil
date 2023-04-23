@@ -18,6 +18,8 @@ import ProductCard from "@/components/ProductCard";
 export default function TiendaFrame() {
 	const dispatch = useDispatch();
 
+const [currentPage, setCurrentPage] = useState(1);
+
 	const Productos = useSelector((state) => state.products);
 	const Paginas = useSelector((state) => state.products.totalPaginas);
 
@@ -28,16 +30,16 @@ useEffect(() => {
 	dispatch(getNumberPages());
 }, [dispatch])  	
 
-
-function currentPage(page){
-//		dispatch(getPages(page));
-//		console.log("mostrando info ");
-}
+// funcion para paginar usando Pagination de Material UI
+const handlePageChange = (event, page) => {
+    setCurrentPage(page);
+    console.log(`Se cambio a la pagina: ${page}`);
+    dispatch(getPages(page));
+};
 
 
 	return (
 <div>
-					
 	{Object.keys(Productos.products).map((idx) => {
 return (
 <ProductCard
@@ -51,13 +53,12 @@ return (
 )
 
 		})}
-
 <br></br>
 
 
 
   <Stack spacing={2}>
-      <Pagination count={ Paginas } color="secondary"/>
+      <Pagination count={ Paginas }  page={currentPage} onChange={ handlePageChange } color="secondary"/>
 </Stack>
 <br></br>
 
