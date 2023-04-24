@@ -26,7 +26,7 @@ import dummyProd from './dummyProd.jpg'
 
 
 
-export default function ProductCard(){
+export default function ProductCard({id, description, precio, imagen} ){
 
 // -------- Handlers ----------------
 
@@ -35,8 +35,7 @@ function handleClickProfile(e){
 // pass product id via props 
 // e.id = product id  
 	
-
-
+// console.log(description)
 }
 
 
@@ -58,14 +57,18 @@ return (
 
 	<CardContent onClick={(e) => handleClickProfile(e) }>
 	<Typography sx={{ mb: 1.5 }} color="text.secondary">
-	<Image src={ dummyProd } alt="Producto"  width={ 300 } height={ 300 }/>
+	{
+	imagen ? (<Image src={ imagen } alt="Producto"  width={ 300 } height={ 300 }/>) :
+	(<Image src={ dummyProd } alt="Producto"  width={ 300 } height={ 300 }/> )
+	}
+
 	</Typography>
 	<Typography variant="body1">
-	Descripcion del producto  
+	{ description }
 	<br />
 	</Typography>
 	<Typography variant="body2">
-	Precio del producto $000.000
+	{ precio }
 	<br />
 	</Typography>
 	</CardContent>
