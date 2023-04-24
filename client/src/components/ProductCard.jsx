@@ -40,8 +40,6 @@ console.log(id)
 
 }
 
-let props = "JULAY!!"
-
 
 // ------ End Handlers ---------------
 

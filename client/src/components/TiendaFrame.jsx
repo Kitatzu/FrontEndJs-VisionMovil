@@ -42,9 +42,6 @@ const handlePageChange = (event, page) => {
 	return (
 <div>
 
-
-
-
 	{Object.keys(Productos.products).map((idx) => {
 return (
 <ProductCard
