@@ -12,6 +12,7 @@ import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 // ------------------------------
 
+
 import ProductCard from "@/components/ProductCard";
 
 
@@ -40,6 +41,10 @@ const handlePageChange = (event, page) => {
 
 	return (
 <div>
+
+
+
+
 	{Object.keys(Productos.products).map((idx) => {
 return (
 <ProductCard
@@ -61,6 +66,5 @@ return (
       <Pagination count={ Paginas }  page={currentPage} onChange={ handlePageChange } color="secondary"/>
 </Stack>
 <br></br>
-
 </div>
 )}

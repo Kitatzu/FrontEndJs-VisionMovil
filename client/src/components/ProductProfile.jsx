@@ -2,6 +2,7 @@ import * as React from 'react';
 
 // ------ NEXT imports -----------------
 import Image from 'next/image'
+import { useRouter } from 'next/router';
 // -------------------------------------
 
 // ----- Material UI imports ------------
@@ -27,9 +28,14 @@ import dummyProd from './dummyProd.jpg'
 // -----------------------------------------
 
 
-function TabPanel(props) {
+export function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
+
+//------------------ obtenemos el id del producto
+const router = useRouter();
+  const id = router.query.id
+//---------------
   return (
     <div
       role="tabpanel"
