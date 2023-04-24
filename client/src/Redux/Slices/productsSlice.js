@@ -79,6 +79,12 @@ export const productsSlice = createSlice({
  	getTotalPages: (state, action) => {
   	 state.totalPaginas = action.payload;
   	  },	 
+      setRestoreProduct: (store,action)=>{
+        store.products[action.payload.id]=action.payload;
+  },
+    setUpdateProduct: (store,action)=>{
+        store.products[action.payload.id]=action.payload;
+  },
   },
 
 
@@ -97,4 +103,6 @@ export const {
   filterPrice,
   filterProduct,
   getTotalPages,
+  setRestoreProduct,
+  setUpdateProduct,
 } = productsSlice.actions;

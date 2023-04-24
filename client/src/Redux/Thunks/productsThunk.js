@@ -10,6 +10,8 @@ import {
   setPopularProducts,
   setDeletedProduct,
   getTotalPages,
+  setRestoreProduct,
+  setUpdateProduct
 } from "../Slices/productsSlice";
 
 export const getProducts = () => {
@@ -156,5 +158,57 @@ export const getNumberPages = () => {
       .catch((response) => {});
   };
 };
+
+
+export const deletedProducts = () => {
+  return async (dispatch) => {
+    dispatch(setIsLoadingProducts(true));
+    await axios
+      .get(`${Global.URL}/products/status`)
+      .then((response) => {
+        dispatch(setDeletedProduct(response.data));
+        dispatch(getProducts());
+        dispatch(setIsLoadingProducts(false));
+      })
+      .catch((response) => {
+        dispatch(setIsLoadingProducts(false));
+        console.log(response);
+      });
+  };
+};
+
+export const restoreProduct =()=>{
+  return async (dispatch) =>{
+      dispatch(setIsLoadingProducts(true));
+      return await axios.put(`${Global.URL}/products/restore/${id}`)
+      .then((response) => {
+          console.log(response);
+          dispatch(setRestoreProduct(response.data));
+          dispatch(getProducts());
+          dispatch(setIsLoadingProducts(false));
+        })
+        .catch((response) => {
+          console.log(response);
+          alert(response.response.data.msg);
+        });
+  }
+  }
+  
+  export const updateProduct =() => {
+      return async (dispatch) =>{
+          dispatch(setIsLoadingProducts(true));
+          return await axios.put(`${Global.URL}/products/${id}`)
+          .then((response) => {
+              console.log(response);
+              dispatch(setUpdateProduct(response.data));
+              dispatch(getProducts());
+              dispatch(setIsLoadingProducts(false));
+            })
+            .catch((response) => {
+              console.log(response);
+              alert(response.response.data.msg);
+            });
+      }
+  }
 
 
