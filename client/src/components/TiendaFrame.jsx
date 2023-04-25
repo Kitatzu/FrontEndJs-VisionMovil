@@ -12,23 +12,38 @@ import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 // ------------------------------
 
+
 import ProductCard from "@/components/ProductCard";
 
 
 export default function TiendaFrame() {
 	const dispatch = useDispatch();
-
-const [currentPage, setCurrentPage] = useState(1);
-
+	const [currentPage, setCurrentPage] = useState(1);
 	const Productos = useSelector((state) => state.products);
 	const Paginas = useSelector((state) => state.products.totalPaginas);
 
 // iniciamos en pagina 1 /pagina 0 nos muestra status # de paginas
+{/*
 useEffect(() => {
 	dispatch(getProducts())
 	dispatch(getPages(1));
 	dispatch(getNumberPages());
 }, [dispatch])  	
+*/}
+
+
+{/* usaremos un useEffect sincrono */}
+useEffect(() => {
+  const fetchData = async () => {
+    await dispatch(getProducts());
+    await dispatch(getPages(1));
+    await dispatch(getNumberPages());
+  }
+  fetchData();
+}, [dispatch]);
+
+
+
 
 // funcion para paginar usando Pagination de Material UI
 const handlePageChange = (event, page) => {
@@ -40,6 +55,8 @@ const handlePageChange = (event, page) => {
 
 	return (
 <div>
+
+
 	{Object.keys(Productos.products).map((idx) => {
 return (
 <ProductCard
@@ -51,8 +68,28 @@ return (
 /> 
 
 )
+})}
 
-		})}
+
+
+
+
+{/*
+{Object.values(Productos.products).map((idx) => {
+  return (
+    <ProductCard
+      key={idx.id}
+      id={idx.id}
+      description={idx.description}
+      precio={idx.price}
+      imagen={idx.img}
+    />
+  );
+})}
+*/}
+
+
+
 <br></br>
 
 
@@ -61,6 +98,5 @@ return (
       <Pagination count={ Paginas }  page={currentPage} onChange={ handlePageChange } color="secondary"/>
 </Stack>
 <br></br>
-
 </div>
 )}

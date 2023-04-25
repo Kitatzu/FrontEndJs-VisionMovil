@@ -1,7 +1,13 @@
 import * as React from 'react';
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getProductsById } from '../Redux/Thunks/productsThunk.js'
+
+
 
 // ------ NEXT imports -----------------
 import Image from 'next/image'
+import { useRouter } from 'next/router';
 // -------------------------------------
 
 // ----- Material UI imports ------------
@@ -27,8 +33,13 @@ import dummyProd from './dummyProd.jpg'
 // -----------------------------------------
 
 
-function TabPanel(props) {
+export function TabPanel(props) {
   const { children, value, index, ...other } = props;
+	
+
+
+
+
 
   return (
     <div
@@ -71,6 +82,38 @@ export default function ProductProfile(){
   };
 
 
+//------------------ obtenemos el id del producto
+const router = useRouter();
+  const id = router.query.id
+//console.log(id);
+//---------------
+
+const dispatch = useDispatch();
+
+{/* usaremos un useEffect sincrono */}
+useEffect(() => {
+  const fetchData = async () => {
+    await dispatch(getProductsById(id));
+}
+  fetchData();
+}, [dispatch]);
+
+
+
+const Producto = useSelector((state) => state.products.productsDetail);
+
+
+{/* asyncrono
+useEffect(() => {
+	dispatch(getProductsById(id))
+}, [dispatch]) 
+*/}
+
+
+//----test point  path to items
+//console.log(Producto.findProduct.img);
+// --------------
+
 
 
 return (
@@ -83,7 +126,7 @@ return (
         
 <Grid item xs={4}>
           <div>
-	<Image src={ dummyProd } alt="Producto"  width={ 300 } height={ 300 } />
+	<Image src={ Producto.findProduct.img } alt="Producto"  width={ 300 } height={ 300 } />
 	</div>
 </Grid>
 
@@ -91,15 +134,15 @@ return (
 <Grid item xs={4}>
      <div>
 	<p>Producto</p>
-	<p>Precio $$</p>
-	<p>Descripcion</p>
+	<p>Precio: {Producto.findProduct.price}</p>
+	<p>Descripcion: { Producto.findProduct.description }</p>
 	<input type="number" />
           <Button color="secondary" variant="contained" size="large">Añadir al Carrito {'>'}</Button>
           <Button color="secondary" variant="contained" size="large">Obtener Apoyo {'>'}</Button>
 <hr></hr>
-	<p>Categoría: Sin categorizar</p>
+	<p>Categoría: { Producto.findProduct.categories }</p>
 	<Stack spacing={1}>
-	<Rating name="half-rating" defaultValue={1} precision={1} />
+	<Rating name="half-rating" defaultValue={ Producto.findProduct.rating } precision={1} />
 	</Stack>
 	<p></p>
 

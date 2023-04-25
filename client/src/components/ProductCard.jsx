@@ -9,9 +9,9 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 // ----------------------------------
 
-import ProductProfile from "@/components/ProductProfile";
 
 // ------ NEXT imports -----------------
+import Link from "next/link"
 import Image from 'next/image';
 // -------------------------------------
 
@@ -34,11 +34,11 @@ function handleClickProfile(e){
 // go to  producto profile
 // pass product id via props 
 // e.id = product id  
-	
-// console.log(description)
+console.log(id)
+	console.log("clicked");
+
+
 }
-
-
 
 
 // ------ End Handlers ---------------
@@ -52,10 +52,15 @@ return (
 <Grid container spacing={2}> 
               <Grid item xs={12}>
 
+
+	{/* <Link href={`/productoProfile?id=${id}`} as="/productoProfile"> */}
+<Link href={`/productoProfile?id=${id}`}>
 	{/*Elements for render product cards */}
 <Card sx={{ maxWidth: 340 }} >
 
-	<CardContent onClick={(e) => handleClickProfile(e) }>
+	<CardContent>
+
+
 	<Typography sx={{ mb: 1.5 }} color="text.secondary">
 	{
 	imagen ? (<Image src={ imagen } alt="Producto"  width={ 300 } height={ 300 }/>) :
@@ -76,7 +81,9 @@ return (
 	<Button size="small">Agregar al Carrito </Button>
 	</CardActions>
 </Card>
-</Grid>
+
+</Link>
+	</Grid>
 
 </Grid>
 
