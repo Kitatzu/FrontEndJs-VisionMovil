@@ -85,16 +85,30 @@ export default function ProductProfile(){
 //------------------ obtenemos el id del producto
 const router = useRouter();
   const id = router.query.id
-console.log(id);
+//console.log(id);
 //---------------
 
-
 const dispatch = useDispatch();
+
+{/* usaremos un useEffect sincrono */}
+useEffect(() => {
+  const fetchData = async () => {
+    await dispatch(getProductsById(id));
+}
+  fetchData();
+}, [dispatch]);
+
+
+
 const Producto = useSelector((state) => state.products.productsDetail);
 
+
+{/* asyncrono
 useEffect(() => {
 	dispatch(getProductsById(id))
 }, [dispatch]) 
+*/}
+
 
 //----test point  path to items
 //console.log(Producto.findProduct.img);
