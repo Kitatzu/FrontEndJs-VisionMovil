@@ -33,7 +33,9 @@ export default function Home() {
 <div className={stylos.back}>
 
 <section>
-	<p>
+	<p
+
+>
 	ENCONTRÁ LA SOLUCIÓN QUE NECESITAS
 	</p>
 
