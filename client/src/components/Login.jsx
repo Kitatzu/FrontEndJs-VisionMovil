@@ -10,6 +10,7 @@ import TextField from '@mui/material/TextField';
 import Checkbox from '@mui/material/Checkbox';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
 // ---------------------------------------
 
 
@@ -23,11 +24,17 @@ export default function Login(   ){
   
   return(
 <div>    
+    
+<Box sx={{ display: 'flex',
+        justifyContent: 'center',  }}>  
+
+<FormControl variant="outlined" className={stylos.PlaceHolder}>    
+ 
     <Box
       component="form"
       sx={{
         '& > :not(style)': { m: 1, width: '40ch' },
-      }}
+   		 }}
       noValidate
       autoComplete="off"
     >
@@ -41,14 +48,14 @@ export default function Login(   ){
         <br/>
       <a href="">¿Olvidaste la contraseña?</a>
     </Box>
-</div>    
-    
-    
-    
-    
-    
-    
-    
-    
+</FormControl>
+
+</Box>  
+<br/>
+</div>
+
+
+
+
 
 )}
