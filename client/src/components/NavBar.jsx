@@ -44,7 +44,7 @@ export default function NavBar () {
             </Link>
         </li>
         <li>
-            <Link href= 'account'>
+            <Link href= '/login'>
                  Mi cuenta 
             </Link>
         </li>
