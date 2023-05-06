@@ -37,7 +37,8 @@ export default function Home() {
 <div className={stylos.back}>
 <br/>
 <br/>
- <Grid item xs={4} style={{textAlign: "center"}}>
+{/* ---- Start Section Container */}
+  <Grid item xs={4} style={{textAlign: "center"}}>
 <section>
 	<p className={stylos.textLight}>
 	ENCONTRÁ LA SOLUCIÓN QUE NECESITAS
@@ -61,12 +62,15 @@ sx={{'& fieldset': {borderColor: '#EEEEEE',},
 
 	<p className={stylos.textLight} style={{fontSize: "20px"}}>	BRINDAMOS SOLUCIONES INTEGRALES E INTERACTIVAS </p>
 
-	<Button className={ stylos.MainButton }color="secondary" variant="contained" size="large">SUSCRIBITE {'>'}</Button>
+	<Button className={ stylos.MainButton }color="secondary" variant="contained" size="large">S U S C R I B I T E {'>'}</Button>
 </section>
 </Grid>
 
 <hr></hr>   {/* section delimiter */}
 <p></p>
+{/* ---- Start Section Container */}
+
+
 
 <section>
 <Box sx={{ flexGrow: 1 }} >
