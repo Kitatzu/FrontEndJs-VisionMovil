@@ -5,3 +5,26 @@ margin-top: 130px;
 margin-bottom: 0px;
 }
 
+.SearchBar {
+background-color: #EEEEEE;
+border-radius: 20px;
+border: 15px solid white;  
+width: 40vw;
+outline-color: red;
+}
+
+.textLight {
+color: white;
+  
+}
+
+.textBold {
+color: white;
+font-weight: bold;
+}
+
+.MainButton {
+width: 200px;
+height: 75px;
+}
+

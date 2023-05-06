@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 // ------ NEXT imports -----------------
 import Image from 'next/image'
 // -------------------------------------
@@ -10,6 +12,8 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import TextField from '@mui/material/TextField';
+import SearchIcon from '@mui/icons-material/Search';
 // ---------------------------------------
 
 
@@ -31,24 +35,35 @@ import Ding9 from './images/Asset36.png'
 export default function Home() {
   return (
 <div className={stylos.back}>
-
+<br/>
+<br/>
+ <Grid item xs={4} style={{textAlign: "center"}}>
 <section>
-	<p
-
->
+	<p className={stylos.textLight}>
 	ENCONTRÁ LA SOLUCIÓN QUE NECESITAS
 	</p>
 
+	
+    <TextField  id="site-search" label="Buscar Productos" variant="outlined" name="searchBar" className={stylos.SearchBar}
+sx={{'& fieldset': {borderColor: '#EEEEEE',},
+        '&:hover fieldset': {
+          borderColor: '#EEEEEE',
+        },
+        '&.Mui-focused fieldset': {
+          borderColor: '#EEEEEE',
+        },
+      }}
+/>
 
-	<input type="search" id="site-search" name="searchBar" />
-	<p>		POTENCIA TU NEGOCIO 	</p>
+	<p className={stylos.textBold} style={{fontSize: "25px"}}>		POTENCIA TU NEGOCIO 	</p>
 
 	<Image src={ Ding1 } alt="My Image"  width={ 800 } height={70} />
 
-	<p>	BRINDAMOS SOLUCIONES INTEGRALES E INTERACTIVAS </p>
+	<p className={stylos.textLight} style={{fontSize: "20px"}}>	BRINDAMOS SOLUCIONES INTEGRALES E INTERACTIVAS </p>
 
-	<Button color="secondary" variant="contained" size="large">SUSCRIBITE {'>'}</Button>
+	<Button className={ stylos.MainButton }color="secondary" variant="contained" size="large">SUSCRIBITE {'>'}</Button>
 </section>
+</Grid>
 
 <hr></hr>   {/* section delimiter */}
 <p></p>
