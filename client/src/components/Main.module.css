@@ -15,7 +15,13 @@ outline-color: red;
 
 .textLight {
 color: white;
-  
+}
+
+.textPurple {
+color: #8A57A2;
+font-size: 20px;
+font-weight: bold;
+ 
 }
 
 .textBold {

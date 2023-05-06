@@ -175,44 +175,60 @@ sx={{'& fieldset': {borderColor: '#EEEEEE',},
   
 </section>
 
-<hr></hr>   {/* section delimiter */}
+ {/* <hr></hr>   section delimiter */}
 {/* ---- End Section Container */}
 
 
-
-<section>
-	<p>¡COMENZÁ TU CAMINO HACIA EL ÉXITO COMERCIAL!</p>
-		<Image src={ Ding5 } alt="My Image"  width={ 700 } height={70} />
-	<p>LLEVAMOS TU NEGOCIO AL SIGUIENTE NIVEL</p>
+{/* ---- Start Section Container */}
+<section style={{ width: "90%",margin: "0 auto",marginTop: "14%"}}>
+  
+	<p style={{textAlign: "center",fontSize: "25px"}} className={stylos.textBold}>¡COMENZÁ TU CAMINO HACIA EL ÉXITO COMERCIAL!</p>
+	<div style={{textAlign: "center"}} >	<Image src={ Ding5 } alt="My Image"  width={ 700 } height={70} /> </div>
+	<p style={{textAlign: "center",fontSize: "20px"}} className={stylos.textLight} >LLEVAMOS TU NEGOCIO AL SIGUIENTE NIVEL</p>
 
 
 <Box sx={{ flexGrow: 1 }} >
-   <Grid container spacing={2}>
+   <Grid container spacing={2} >
         
-       <Grid item xs={4}>
-          <div>
-<Image src={ Ding6 } alt="My Image"  width={ 400 } height={360} />
- <Image src={ Ding7 } alt="My Image"  width={ 400 } height={70} />
-          
-		</div>
-      </Grid>
+       <Grid item xs={7}>
+          <div style={{textAlign: "center",marginTop: "8%"}}>
+<Image  src={ Ding6 } alt="My Image"  width={ 400 } height={360} />
+ 		</div>
+<br/>
+  	<div style={{textAlign: "center",marginTop: "7%"}}>
+<Image src={ Ding7 } alt="My Image"  width={ 400 } height={50} />
+	</div>
+</Grid>
 
       <Grid item xs={4}>
          <div>
-             <p>   1. REGISTRATE </p>
+             	<div className={stylos.textPurple}>
+        		<p>   1. REGISTRATE </p>
+				</div>
+				<div className={stylos.textLight} style={{fontSize: "20px"}}>
                 ELEGÍ EL NOMBRE DE TU TIENDA, CON TU  E-MAIL Y UNA CONTRASEÑA.
-                
+                </div>
+				<div className={stylos.textPurple}>
                <p> 2. AGREGÁ TUS PRODUCTOS </p>
+				</div>
+				<div className={stylos.textLight} style={{fontSize: "20px"}}>
                 SUBÍ TUS PRODUCTOS, DESCRIBÍ SUS CARACTERÍSTICAS Y CREÁ UN CATÁLOGO.
-                
+                </div>
+				<div className={stylos.textPurple}>
               <p>  3. CONFIGURA MEDIOS DE PAGOS </p>
+				</div>
+				<div className={stylos.textLight} style={{fontSize: "20px"}}>
                 ELEGÍ FORMAS DE PAGO, DESCUENTOS Y CUOTAS.
-                
+                </div>
+				<div className={stylos.textPurple}>
                <p> 4. VENDÉ </p>
+				</div>
+				<div className={stylos.textLight} style={{fontSize: "20px"}}>
                 LISTO, YA PODÉS HACER VENTAS EN TU TIENDA EN LÍNEA.
+                </div>
     	</div>
 <p></p>
-<Button color="secondary" variant="contained" size="large">COMENZÁ {'>'}</Button>
+<Button className={ stylos.MainButton } color="secondary" variant="contained" size="large">COMENZÁ {'>'}</Button>
       </Grid>
       
 
@@ -221,7 +237,7 @@ sx={{'& fieldset': {borderColor: '#EEEEEE',},
  </Box>
 
 </section>
-
+{/* ---- End Section Container */}
 
 <hr></hr>  {/* section delimiter */}
 
