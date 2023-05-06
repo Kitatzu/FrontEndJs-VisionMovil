@@ -14,6 +14,8 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Container from '@mui/material/Container';
 // ---------------------------------------
 
 
@@ -66,28 +68,29 @@ sx={{'& fieldset': {borderColor: '#EEEEEE',},
 </section>
 </Grid>
 
-<hr></hr>   {/* section delimiter */}
+{/* <hr></hr>    section delimiter */}
 <p></p>
+{/* ---- End Section Container */}
+
+
 {/* ---- Start Section Container */}
-
-
-
-<section>
-<Box sx={{ flexGrow: 1 }} >
-      <Grid container spacing={2}>
+{/* ---- border: '1px solid red' ---*/}
+<section style={{ width: "70%",margin: "0 auto",marginTop: "14%" }}>
+  
+      <Grid container spacing={2} >
         
-        <Grid item xs={4}>
+        <Grid item xs={4} >
           <div>
-					<Image src={ Ding2 } alt="My Image"  width={ 400 } height={70} />
+					<Image src={ Ding2 } alt="My Image"  width={ 400 } height={90} />
 <p></p>
 
-<Accordion>
+<Accordion className={stylos.AccordionOptions}>
         <AccordionSummary
-          
+          expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>MAMPARA PUBLICITARÍA</Typography>
+          <Typography style={{fontSize: "20px"}} >MAMPARA PUBLICITARÍA</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -97,12 +100,14 @@ sx={{'& fieldset': {borderColor: '#EEEEEE',},
         </AccordionDetails>
 </Accordion>
 
-<Accordion>
+<Accordion className={stylos.AccordionOptions}>
         <AccordionSummary
+		  expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2a-content"
           id="panel2a-header"
+		  style={{marginTop: "5%"}}
         >
-          <Typography>DIRECTORIO COMERCIAL</Typography>
+          <Typography style={{fontSize: "20px"}}>DIRECTORIO COMERCIAL</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -113,12 +118,14 @@ sx={{'& fieldset': {borderColor: '#EEEEEE',},
         </AccordionDetails>
 </Accordion>
 
-<Accordion>
+<Accordion className={stylos.AccordionOptions} >
         <AccordionSummary
+		  expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2a-content"
           id="panel3a-header"
+			style={{marginTop: "5%"}}
         >
-          <Typography>MARKETPLACE</Typography>
+          <Typography style={{fontSize: "20px"}}>MARKETPLACE</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -129,12 +136,14 @@ sx={{'& fieldset': {borderColor: '#EEEEEE',},
         </AccordionDetails>
 </Accordion>
 
-<Accordion>
+<Accordion className={stylos.AccordionOptions}>
         <AccordionSummary
+		  expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2a-content"
           id="panel4a-header"
+		  style={{marginTop: "5%"}}
         >
-          <Typography>SOCIAL MEDIA</Typography>
+          <Typography style={{fontSize: "20px"}}>SOCIAL MEDIA</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -146,28 +155,30 @@ sx={{'& fieldset': {borderColor: '#EEEEEE',},
 </Accordion>
 
 
-<p>ACCEDE A HERRAMIENTAS</p>
+<p className={stylos.textBold} style={{fontSize: "25px"}} >ACCEDE A HERRAMIENTAS</p>
 					<Image src={ Ding4 } alt="My Image"  width={ 400 } height={60} />
 
 
 
           </div>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={8} style={{textAlign: "center"}}>
           <div>
 					<Image src={ Ding3 } alt="My Image"  width={ 700 } height={500} />
-						<Button color="secondary" variant="contained" size="large">PUBLICITÁ {'>'}</Button>
+						<Button className={ stylos.MainButton } color="secondary" variant="contained" size="large">PUBLICITÁ {'>'}</Button>
 
 
           </div>
         </Grid>
      
       </Grid>
-    </Box>
-
+  
 </section>
 
 <hr></hr>   {/* section delimiter */}
+{/* ---- End Section Container */}
+
+
 
 <section>
 	<p>¡COMENZÁ TU CAMINO HACIA EL ÉXITO COMERCIAL!</p>
@@ -210,6 +221,7 @@ sx={{'& fieldset': {borderColor: '#EEEEEE',},
  </Box>
 
 </section>
+
 
 <hr></hr>  {/* section delimiter */}
 
