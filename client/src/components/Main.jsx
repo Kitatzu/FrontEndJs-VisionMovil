@@ -16,6 +16,7 @@ import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Container from '@mui/material/Container';
+import TextareaAutosize from '@mui/base/TextareaAutosize';
 // ---------------------------------------
 
 
@@ -190,7 +191,7 @@ sx={{'& fieldset': {borderColor: '#EEEEEE',},
 <Box sx={{ flexGrow: 1 }} >
    <Grid container spacing={2} >
         
-       <Grid item xs={7}>
+       <Grid item xs={7} >
           <div style={{textAlign: "center",marginTop: "8%"}}>
 <Image  src={ Ding6 } alt="My Image"  width={ 400 } height={360} />
  		</div>
@@ -239,41 +240,48 @@ sx={{'& fieldset': {borderColor: '#EEEEEE',},
 </section>
 {/* ---- End Section Container */}
 
-<hr></hr>  {/* section delimiter */}
+{/*<hr></hr>   section delimiter */}
 
+{/* ---- Start Section Container */}
+<section style={{ width: "90%",margin: "0 auto",marginTop: "14%"}}>
 
-<section>
-<Box sx={{ flexGrow: 1 }} >
-   <Grid container spacing={2}>
-
+  
+<Box sx={{ flexGrow: 1 }}  >
+  <Grid container>
+ 
 		{/*contact form*/}        
-       <Grid item xs={4}>
-          <div>
+<Grid item xs={7}>
+        
+<div style={{textAlign: "center"}}>
 	<Image src={ Ding8 } alt="My Image"  width={ 500 } height={70} />
-	<input type="text" id="name" name="name"   size="10" />		
-	<input type="text" id="email" name="email" size="20" />
-	<textarea id="story" name="story"  rows="5" cols="33" > 	</textarea>
+      <br/>
+       <br/>
+	<TextField className={stylos.FormFields} style={{width: "45%"}} required name="name" id="outlined-required" label="Nombre"/>
+    <TextField className={stylos.FormFields} style={{width: "45%",marginBottom: "2%"}} required name="correoe" id="outlined-required" label="Correo Electronico"/>    
+	<br/>
+      <TextareaAutosize className={stylos.FormFields} name="story" style={{height: "200px", width: "91%"}}/>
+    <br/>
+    <br/>
 	<Button color="secondary" variant="contained" size="large">ENVIAR</Button>
-
-
-		</div>
-      </Grid>
+</div>
+</Grid>
 
 <Grid item xs={4}>
-        <div>
-	<Image src={ Ding9 } alt="My Image"  width={ 400 } height={100} />     
-	<p>UNITE GRATIS Y AUMENTA LA DEMANDA
-	DE TU EMPRENDIMIENTO O MARCA. </p>
-	<Button color="secondary" variant="contained" size="large">UNITE GRATIS</Button>
-	     
-		</div>
-      </Grid>
 
-  </Grid>
- </Box>
+<div style={{textAlign: "center"}} >
+	<Image src={ Ding9 } alt="My Image"  width={ 400 } height={130} />     
+	<p className={stylos.textLight} style={{fontSize: "20px"}}>UNITE GRATIS Y AUMENTA LA DEMANDA
+	DE TU EMPRENDIMIENTO O MARCA. </p>
+	<Button className={ stylos.MainButton } color="secondary" variant="contained" size="large">UNITE GRATIS</Button>
+</div>
+</Grid>
+
+</Grid>
+</Box>
 
 </section>
-
+<br/>
+{/* ---- End Section Container */}
 
 </div>
 )}
