@@ -5,3 +5,50 @@ margin-top: 130px;
 margin-bottom: 0px;
 }
 
+.SearchBar {
+background-color: #EEEEEE;
+border-radius: 20px;
+border: 15px solid white;  
+width: 40vw;
+}
+
+.FormFields {
+background-color: white;
+margin-left: 10px;
+
+box-shadow: 13px 16px 0px -7px #8A57A2;
+-webkit-box-shadow: 13px 16px 0px -7px #8A57A2;
+-moz-box-shadow: 13px 16px 0px -7px #8A57A2;
+}
+
+
+.textLight {
+color: white;
+}
+
+.textPurple {
+color: #8A57A2;
+font-size: 20px;
+font-weight: bold;
+ 
+}
+
+.textBold {
+color: white;
+font-weight: bold;
+}
+
+.MainButton {
+width: 200px;
+height: 75px;
+}
+
+.BlueSeccion {
+background-color: #4188C8;
+}
+
+
+.AccordionOptions {
+background-color: #4188C8;
+color: white;
+}
