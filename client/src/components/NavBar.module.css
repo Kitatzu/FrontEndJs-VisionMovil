@@ -21,3 +21,9 @@ margin-right: 50px;
 .MenuOptions a{
 text-decoration:none;
 }
+
+@media only screen and (max-width: 600px) {
+  .Bar {
+background-color: white;
+}
+}
