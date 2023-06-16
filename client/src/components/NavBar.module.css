@@ -21,3 +21,53 @@ margin-right: 50px;
 .MenuOptions a{
 text-decoration:none;
 }
+
+.burgerMenu {
+  display: none;
+}
+
+.MenuOptionsVertical {
+  display: none;
+}
+
+
+/* Movil */
+@media (max-width: 575.98px)and (orientation:portrait) {
+
+.MenuOptions  {
+background-color: white;
+text-align: left;
+font-weight: bold;
+margin-right: 50px;
+
+
+}
+.verticalMenu{
+  text-decoration:none;
+}
+
+.MenuOption {
+  display: none;
+}
+
+.burgerMenu {
+  display: inline-block;
+  color: #602993;
+  margin-right: 10px;
+}
+
+.burgerMenuItems {
+list-style-type: none;
+text-align: right;
+margin-right: 2%;
+
+}
+
+.MenuOptionsVertical {
+  list-style: none; 
+  display: block; 
+  text-align: center;
+
+}
+
+ }
