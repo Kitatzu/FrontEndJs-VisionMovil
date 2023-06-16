@@ -36,6 +36,8 @@ import Ding9 from './images/Asset36.png'
 
 
 export default function Home() {
+
+
   return (
 <div className={stylos.back}>
 <br/>
@@ -48,7 +50,7 @@ export default function Home() {
 	</p>
 
 	
-    <TextField  id="site-search" label="Buscar Productos" variant="outlined" name="searchBar" className={stylos.SearchBar}
+    <TextField id="site-search" label="Buscar Productos" variant="outlined" name="searchBar" className={stylos.SearchBar}
 sx={{'& fieldset': {borderColor: '#EEEEEE',},
         '&:hover fieldset': {
           borderColor: '#EEEEEE',
@@ -59,11 +61,11 @@ sx={{'& fieldset': {borderColor: '#EEEEEE',},
       }}
 />
 
-	<p className={stylos.textBold} style={{fontSize: "25px"}}>		POTENCIA TU NEGOCIO 	</p>
+	<p className={stylos.textBold}>		POTENCIA TU NEGOCIO 	</p>
 
-	<Image src={ Ding1 } alt="My Image"  width={ 800 } height={70} />
+	<Image className={stylos.Ding1 }src={ Ding1 } alt="Publicidad y Marketing" />
 
-	<p className={stylos.textLight} style={{fontSize: "20px"}}>	BRINDAMOS SOLUCIONES INTEGRALES E INTERACTIVAS </p>
+	<p className={stylos.textLight}>	BRINDAMOS SOLUCIONES INTEGRALES E INTERACTIVAS </p>
 
 	<Button className={ stylos.MainButton }color="secondary" variant="contained" size="large">S U S C R I B I T E {'>'}</Button>
 </section>
@@ -76,13 +78,13 @@ sx={{'& fieldset': {borderColor: '#EEEEEE',},
 
 {/* ---- Start Section Container */}
 {/* ---- border: '1px solid red' ---*/}
-<section style={{ width: "70%",margin: "0 auto",marginTop: "14%" }}>
+<section className={stylos.section1}>
   
       <Grid container spacing={2} >
         
-        <Grid item xs={4} >
+        <Grid item  className={stylos.GridItem1}>
           <div>
-					<Image src={ Ding2 } alt="My Image"  width={ 400 } height={90} />
+					<Image className={stylos.Ding2 } src={ Ding2 } alt="Publicita con Nosotros"/>
 <p></p>
 
 <Accordion className={stylos.AccordionOptions}>
@@ -91,10 +93,10 @@ sx={{'& fieldset': {borderColor: '#EEEEEE',},
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography style={{fontSize: "20px"}} >MAMPARA PUBLICITARÍA</Typography>
+          <Typography className={ stylos.AccordionTypography }>MAMPARA PUBLICITARÍA</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography className={stylos.AccordionInnerTypography}>
             Nuestro innovador recurso utiliza como medio el transporte de pasajeros, permitiendo
             al anunciante generar gran numero de vistas diarias e invitando al pasajero a visitar tu negocio.
           </Typography>
@@ -108,10 +110,10 @@ sx={{'& fieldset': {borderColor: '#EEEEEE',},
           id="panel2a-header"
 		  style={{marginTop: "5%"}}
         >
-          <Typography style={{fontSize: "20px"}}>DIRECTORIO COMERCIAL</Typography>
+          <Typography className={ stylos.AccordionTypography }>DIRECTORIO COMERCIAL</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography className={stylos.AccordionInnerTypography}>
             Haz parte de nuestro directorio comercial, un servicio gratuito donde
             el usuario puede encontrar todo tipo de solución a su necesidad, conectando
             a compradores y vendedores de manera eficiente.
@@ -126,10 +128,10 @@ sx={{'& fieldset': {borderColor: '#EEEEEE',},
           id="panel3a-header"
 			style={{marginTop: "5%"}}
         >
-          <Typography style={{fontSize: "20px"}}>MARKETPLACE</Typography>
+          <Typography className={ stylos.AccordionTypography }>MARKETPLACE</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography className={stylos.AccordionInnerTypography}>
             Regístrate como vendedor, crea tu tienda en línea en unos simples
             pasos y comienza a vender todo desde un mismo lugar, con una amplia
             pasarela de pagos.
@@ -144,10 +146,10 @@ sx={{'& fieldset': {borderColor: '#EEEEEE',},
           id="panel4a-header"
 		  style={{marginTop: "5%"}}
         >
-          <Typography style={{fontSize: "20px"}}>SOCIAL MEDIA</Typography>
+          <Typography className={ stylos.AccordionTypography }>SOCIAL MEDIA</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography className={stylos.AccordionInnerTypography}>
             En nuestra plataforma podés obtener herramientas,
             datos y un sin fin de servicios digitales para conocer
             y abordar de mejor forma tu público objetivo.  
@@ -156,8 +158,8 @@ sx={{'& fieldset': {borderColor: '#EEEEEE',},
 </Accordion>
 
 
-<p className={stylos.textBold} style={{fontSize: "25px"}} >ACCEDE A HERRAMIENTAS</p>
-					<Image src={ Ding4 } alt="My Image"  width={ 400 } height={60} />
+<p className={ stylos.textBold }>ACCEDE A HERRAMIENTAS</p>
+					<Image className={ stylos.Ding4 }src={ Ding4 } alt="Innovadoras" />
 
 
 
@@ -165,8 +167,8 @@ sx={{'& fieldset': {borderColor: '#EEEEEE',},
         </Grid>
         <Grid item xs={8} style={{textAlign: "center"}}>
           <div>
-					<Image src={ Ding3 } alt="My Image"  width={ 700 } height={500} />
-						<Button className={ stylos.MainButton } color="secondary" variant="contained" size="large">PUBLICITÁ {'>'}</Button>
+					<Image className={stylos.Ding3} src={ Ding3 } alt="Publicidad y Marketing"/>
+						<Button className={ stylos.PublicitaButton } color="secondary" variant="contained" size="large">PUBLICITÁ {'>'}</Button>
 
 
           </div>
@@ -181,11 +183,11 @@ sx={{'& fieldset': {borderColor: '#EEEEEE',},
 
 
 {/* ---- Start Section Container */}
-<section style={{ width: "90%",margin: "0 auto",marginTop: "14%"}}>
+<section className={ stylos.section2 }>
   
-	<p style={{textAlign: "center",fontSize: "25px"}} className={stylos.textBold}>¡COMENZÁ TU CAMINO HACIA EL ÉXITO COMERCIAL!</p>
-	<div style={{textAlign: "center"}} >	<Image src={ Ding5 } alt="My Image"  width={ 700 } height={70} /> </div>
-	<p style={{textAlign: "center",fontSize: "20px"}} className={stylos.textLight} >LLEVAMOS TU NEGOCIO AL SIGUIENTE NIVEL</p>
+	<p style={{textAlign: "center"}} className={stylos.textBold}>¡COMENZÁ TU CAMINO HACIA EL ÉXITO COMERCIAL!</p>
+	<div style={{textAlign: "center"}} >	<Image src={ Ding5 } className={ stylos.Ding5 }alt="Registrate como Vendedor" /> </div>
+	<p style={{textAlign: "center"}} className={stylos.textLight} >LLEVAMOS TU NEGOCIO AL SIGUIENTE NIVEL</p>
 
 
 <Box sx={{ flexGrow: 1 }} >
@@ -193,43 +195,43 @@ sx={{'& fieldset': {borderColor: '#EEEEEE',},
         
        <Grid item xs={7} >
           <div style={{textAlign: "center",marginTop: "8%"}}>
-<Image  src={ Ding6 } alt="My Image"  width={ 400 } height={360} />
+<Image  src={ Ding6 } className={ stylos.Ding6 }alt="Phones" />
  		</div>
 <br/>
   	<div style={{textAlign: "center",marginTop: "7%"}}>
-<Image src={ Ding7 } alt="My Image"  width={ 400 } height={50} />
+<Image src={ Ding7 } className={ stylos.Ding7 }alt="Asi de Simple"/>
 	</div>
 </Grid>
 
-      <Grid item xs={4}>
+      <Grid item className={ stylos.GridItem2 }>
          <div>
              	<div className={stylos.textPurple}>
-        		<p>   1. REGISTRATE </p>
+        		<p className={ stylos.pTitles }>   1. REGISTRATE </p>
 				</div>
-				<div className={stylos.textLight} style={{fontSize: "20px"}}>
+				<div className={stylos.textLight} >
                 ELEGÍ EL NOMBRE DE TU TIENDA, CON TU  E-MAIL Y UNA CONTRASEÑA.
                 </div>
 				<div className={stylos.textPurple}>
-               <p> 2. AGREGÁ TUS PRODUCTOS </p>
+               <p className={ stylos.pTitles }> 2. AGREGÁ TUS PRODUCTOS </p>
 				</div>
-				<div className={stylos.textLight} style={{fontSize: "20px"}}>
+				<div className={stylos.textLight} >
                 SUBÍ TUS PRODUCTOS, DESCRIBÍ SUS CARACTERÍSTICAS Y CREÁ UN CATÁLOGO.
                 </div>
 				<div className={stylos.textPurple}>
-              <p>  3. CONFIGURA MEDIOS DE PAGOS </p>
+              <p className={ stylos.pTitles }>  3. CONFIGURA MEDIOS DE PAGOS </p>
 				</div>
-				<div className={stylos.textLight} style={{fontSize: "20px"}}>
+				<div className={stylos.textLight} >
                 ELEGÍ FORMAS DE PAGO, DESCUENTOS Y CUOTAS.
                 </div>
 				<div className={stylos.textPurple}>
-               <p> 4. VENDÉ </p>
+               <p className={ stylos.pTitles }> 4. VENDÉ </p>
 				</div>
-				<div className={stylos.textLight} style={{fontSize: "20px"}}>
+				<div className={stylos.textLight}>
                 LISTO, YA PODÉS HACER VENTAS EN TU TIENDA EN LÍNEA.
                 </div>
     	</div>
 <p></p>
-<Button className={ stylos.MainButton } color="secondary" variant="contained" size="large">COMENZÁ {'>'}</Button>
+<Button className={ stylos.ComenzButton } color="secondary" variant="contained" size="large">COMENZÁ {'>'}</Button>
       </Grid>
       
 
@@ -250,30 +252,31 @@ sx={{'& fieldset': {borderColor: '#EEEEEE',},
   <Grid container>
  
 		{/*contact form*/}        
-<Grid item xs={7}>
+<Grid item className={ stylos.GridItem3 }>
         
 <div style={{textAlign: "center"}}>
-	<Image src={ Ding8 } alt="My Image"  width={ 500 } height={70} />
+	<Image src={ Ding8 } className={ stylos.Ding8 }alt="Contactanos" />
       <br/>
        <br/>
-	<TextField className={stylos.FormFields} style={{width: "45%"}} required name="name" id="outlined-required" label="Nombre"/>
-    <TextField className={stylos.FormFields} style={{width: "45%",marginBottom: "2%"}} required name="correoe" id="outlined-required" label="Correo Electronico"/>    
+	<TextField className={stylos.FormFields}  required name="name" id="outlined-required" label="Nombre"/>
+    <TextField className={stylos.FormFields} style={{marginBottom: "2%"}} required name="correoe" id="outlined-required" label="Correo Electronico"/>    
 	<br/>
-      <TextareaAutosize className={stylos.FormFields} name="story" style={{height: "200px", width: "91%"}}/>
+      <TextareaAutosize className={stylos.FormFields} name="story" style={{height: "200px"}}/>
     <br/>
     <br/>
-	<Button color="secondary" variant="contained" size="large">ENVIAR</Button>
+	<Button className={ stylos.MainButton } color="secondary" variant="contained" size="large">ENVIAR</Button>
 </div>
 </Grid>
 
 <Grid item xs={4}>
 
 <div style={{textAlign: "center"}} >
-	<Image src={ Ding9 } alt="My Image"  width={ 400 } height={130} />     
-	<p className={stylos.textLight} style={{fontSize: "20px"}}>UNITE GRATIS Y AUMENTA LA DEMANDA
+	<Image src={ Ding9 } className={ stylos.Ding9 }alt="Comenza Gratis"/>     
+	<p className={stylos.textLight} style={{marginLeft: "100%"}}>UNITE GRATIS Y AUMENTA LA DEMANDA
 	DE TU EMPRENDIMIENTO O MARCA. </p>
-	<Button className={ stylos.MainButton } color="secondary" variant="contained" size="large">UNITE GRATIS</Button>
+	<Button className={ stylos.MainButton } style={{marginLeft: "100%"}}color="secondary" variant="contained" size="large">UNITE GRATIS</Button>
 </div>
+
 </Grid>
 
 </Grid>
