@@ -15,7 +15,8 @@ width: 40vw;
 .FormFields {
 background-color: white;
 margin-left: 10px;
-
+width: 50%;
+margin-bottom: 2%;
 box-shadow: 13px 16px 0px -7px #8A57A2;
 -webkit-box-shadow: 13px 16px 0px -7px #8A57A2;
 -moz-box-shadow: 13px 16px 0px -7px #8A57A2;
@@ -24,6 +25,7 @@ box-shadow: 13px 16px 0px -7px #8A57A2;
 
 .textLight {
 color: white;
+font-size: 20px;
 }
 
 .textPurple {
@@ -36,13 +38,17 @@ font-weight: bold;
 .textBold {
 color: white;
 font-weight: bold;
+
 }
 
 .MainButton {
 width: 200px;
 height: 75px;
 }
-
+.PublicitaButton {
+width: 200px;
+height: 75px;	
+}
 .BlueSeccion {
 background-color: #4188C8;
 }
@@ -51,5 +57,190 @@ background-color: #4188C8;
 .AccordionOptions {
 background-color: #4188C8;
 color: white;
+}
+
+.Ding1 {
+	width: 800px;
+	height: 70px;
+}
+.Ding2{
+width: 400px;
+height: 90px;
+}
+.Ding3 {
+	width: 700px;
+	height: 500px;
+}
+.Ding4{
+	width: 400px;
+	height: 60px;
+}
+.Ding5  {
+	width: 700px;
+	height: 70px;
+}
+.Ding6 {
+	width: 400px;
+	height: 360px;
+}
+.Ding7 {
+	width: 400px;
+	height: 50px;
+}
+.Ding8 {
+	width: 500px;
+	height: 70%;
+}
+.Ding9 {
+	width: 400px;
+	height: 130px;
+}
+.section1 {
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 14%;
+}
+.GridItem1 {
+	width: 30%;
+}
+.AccordionTypography {
+	font-size: 20px;
+}
+
+.section2 {
+width: 90%;
+margin: 0 auto;
+margin-top: 14%;
+}
+.GridItem2 {
+	width: 30%;
+}
+.ComenzButton {
+	width: 200px;
+	height: 75px;
+}
+.GridItem3 {
+	width: 50%;
+}
+
+/* Movil */
+@media (max-width: 575.98px)and (orientation:portrait) {
+.back {
+background-color: #D8D55D;
+margin-top: 130px;
+margin-bottom: 0px;
+width: 172vh;
+}
+
+.textLight {
+color: white;
+font-size: 35px;
+}
+
+.SearchBar {
+	width: 50%;
+}
+
+.textBold {
+	font-size: 50px;
+	}
+
+.Ding1 {
+	width: 1000px;
+	height: 70px;
+}
+.Ding2 {
+width: 800px;
+height: 160px;
+margin-left: 10%;
+}
+.Ding3 {
+	width: 950px;
+	height: 700px;
+}
+.Ding4{
+	width: 800px;
+	height: 120px;
+	margin-left: 10%;
+}
+
+.MainButton {
+width: 370px;
+height: 120px;
+font-size: 35px;
+}
+.PublicitaButton {
+width: 370px;
+height: 120px;
+font-size: 35px;
+margin-left: 40%;
+margin-top: 10%;
+}
+.section1 {
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 14%;
+}
+
+.GridItem1 {
+	width: 100%;
+}
+
+.AccordionTypography {
+	font-size: 50px;
+	margin-left: 10%;
+}
+.AccordionInnerTypography  {
+	font-size: 30px;
+}
+
+.Ding5  {
+	width: 1000px;
+	height: 90px;
+}
+.Ding6 {
+	width: 800px;
+	height: 560px;
+	margin-left: 20%;
+}
+.Ding7 {
+	width: 500px;
+	height: 100px;
+margin-left: 50%;
+}
+.Ding8 {
+	width: 800px;
+	height: 70%;
+}
+.Ding9 {
+	width: 800px;
+	height: 170px;
+	margin-left: 40%;
+	margin-top: 15%;
+}
+.GridItem2 {
+	width: 100%;
+	margin-left: 10%;
+}
+.pTitles {
+	font-size: 50px;
+}
+.ComenzButton {
+width: 370px;
+height: 120px;
+font-size: 35px;
+margin-left: 25%;
+margin-top: 10%;
+}
+.GridItem3 {
+	width: 100%;
+}
+.FormFields {
+width: 100%;
+margin-bottom: 3%;
+}
+
+
+
 }
 
