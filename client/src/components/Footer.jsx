@@ -1,41 +1,45 @@
 import { AppBar, Container, Grid, Toolbar, Typography, Box, CssBaseline } from '@mui/material';
 import { AiFillLinkedin, AiOutlineFacebook,AiOutlineInstagram } from "react-icons/ai";
 import Link from 'next/link';
+import stylos from './Footer.module.css';
 
 
 export default function Footer(){
     return(
-<Box bgcolor="black" color="white" py={5} position="static">
-<CssBaseline />
-    <Container maxWidth={false} disableGutters>
-        <Toolbar >
+
+
+<Box py={3} className={ stylos.Box }>
+  
+
         <Grid Container>
 
-        <Grid item>
-              <Typography >
-               VisionMovil, contactenos:
-              </Typography>
-        </Grid>
-        <br></br>
-        <Grid item>
+            <Grid item>
+                  <Typography >
+                   VisionMovil, contactenos:
+                  </Typography>
+            </Grid>
+            <br></br>
+            <Grid item>
 
-        <Link href="https://ar.linkedin.com/">
-           <AiFillLinkedin />
-        </Link>
+            <Link href="https://ar.linkedin.com/">
+               <AiFillLinkedin />
+            </Link>
 
-        <Link href="https://facebook.com/">
-           <AiOutlineFacebook />
-        </Link>
+            <Link href="https://facebook.com/">
+               <AiOutlineFacebook />
+            </Link>
 
-        <Link href="https://instagram.com/">
-           <AiOutlineInstagram />
-        </Link>
-            
-        </Grid>
+            <Link href="https://instagram.com/">
+               <AiOutlineInstagram />
+            </Link>
+                
+            </Grid>
 
-        </Grid>
-        </Toolbar>
-    </Container>
+         </Grid>
+    
 </Box>
+
+
+
     )
 }
